@@ -1,0 +1,10 @@
+<plugin name='envers' version='4.3.6.Final-SNAPSHOT' grailsVersion='2.4.0 &gt; *'>
+  <author>Lucas Ward, Jay Hogan</author>
+  <title>Grails Envers Plugin</title>
+  <description>Plugin to integrate grails with Hibernate Envers</description>
+  <documentation>http://grails.org/plugin/envers</documentation>
+  <type>EnversGrailsPlugin</type>
+  <resources>
+    <resource>spring.resources</resource>
+  </resources>
+</plugin>

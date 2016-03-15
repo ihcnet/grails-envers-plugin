@@ -45,7 +45,7 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        build(":tomcat:7.0.55") {
+        build("org.grails.plugins:tomcat:7.0.55") {
             export = false
         }
         build ':release:3.0.1', ':rest-client-builder:2.0.1', {
@@ -54,7 +54,7 @@ grails.project.dependency.resolution = {
 
         // To use the Envers plugin, you will also need to add the current Hibernate4 plugin
         // as a dependency.
-        compile(":hibernate4:4.3.6.1") {
+        compile("org.grails.plugins:hibernate4:4.3.6.1") {
             export = false
         }
     }

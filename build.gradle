@@ -1,0 +1,46 @@
+group 'org.grails.plugins'
+version '4.3.6.Final-SNAPSHOT'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "org.grails:grails-gradle-plugin:2.2.0.RC1"
+    }
+}
+
+apply plugin: 'grails'
+
+grails {
+    grailsVersion = '2.4.4' // Specifies the Grails version to use
+    groovyVersion = '2.3.7'
+    // Specify the Groovy version to use (should match the version that ships with the above Grails version)
+    springLoadedVersion = '1.2.0.RELEASE' // Specify the Spring Loaded version to use
+}
+
+repositories {
+    jcenter()
+    grails.central()
+    //Adds the Grails Central Repository for resolving Grails plugins (replaces grailsPlugins(), grailsCentral() from BuildConfig.groovy)
+}
+
+dependencies {
+//    provided 'org.springframework.boot:spring-boot-starter-logging'
+//    provided "org.springframework.boot:spring-boot-starter-actuator"
+//    provided "org.springframework.boot:spring-boot-autoconfigure"
+//    provided "org.springframework.boot:spring-boot-starter-tomcat"
+//    provided "org.grails:grails-web-boot"
+//    provided "org.grails:grails-dependencies"
+    provided 'javax.servlet:javax.servlet-api:3.1.0'
+    compile('org.hibernate:hibernate-envers:4.3.6.Final') {
+        exclude module: 'xml-apis'
+    }
+    testRuntime "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
+    runtime("org.grails.plugins:hibernate4:4.3.6.1"){
+        exclude module: 'xml-apis'
+    }
+    compile("org.grails.plugins:tomcat:7.0.55")
+    compile("org.grails.plugins:release:3.0.1")
+    compile("org.grails.plugins:rest-client-builder:2.0.1")
+}
