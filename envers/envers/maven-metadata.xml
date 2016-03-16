@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>envers</groupId>
+  <artifactId>envers</artifactId>
+  <versioning>
+    <versions>
+      <version>4.3.6.Final-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20160316084139</lastUpdated>
+  </versioning>
+</metadata>
