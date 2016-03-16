@@ -1,3 +1,6 @@
+apply plugin: 'grails'
+apply plugin: 'maven-publish'
+
 group 'org.grails.plugins'
 version '4.3.6.Final-SNAPSHOT'
 
@@ -9,8 +12,6 @@ buildscript {
         classpath "org.grails:grails-gradle-plugin:2.2.0.RC1"
     }
 }
-
-apply plugin: 'grails'
 
 grails {
     grailsVersion = '2.4.4' // Specifies the Grails version to use
@@ -37,7 +38,7 @@ dependencies {
         exclude module: 'xml-apis'
     }
     testRuntime "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
-    runtime("org.grails.plugins:hibernate4:4.3.6.1"){
+    runtime("org.grails.plugins:hibernate4:4.3.6.1") {
         exclude module: 'xml-apis'
     }
     compile("org.grails.plugins:tomcat:7.0.55")
