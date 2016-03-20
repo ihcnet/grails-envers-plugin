@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <groupId>envers</groupId>
     <artifactId>envers</artifactId>
     <packaging>grails-plugin</packaging>
@@ -63,27 +63,26 @@
             <scope>test</scope>
         </dependency>
 
-        
-        
+
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-envers</artifactId>
             <version>4.3.6.Final</version>
             <scope>compile</scope>
-            
-            
+
+
         </dependency>
-        
+
         <dependency>
             <groupId>org.grails</groupId>
             <artifactId>grails-datastore-test-support</artifactId>
             <version>1.0.2-grails-2.4</version>
             <scope>test</scope>
-            
-            
+
+
         </dependency>
-        
-        
+
+
         <dependency>
             <groupId>org.grails.plugins</groupId>
             <artifactId>webxml</artifactId>
@@ -136,6 +135,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
                 <configuration>
                     <skip>true</skip>
                 </configuration>
@@ -179,15 +179,38 @@
                 <extensions>true</extensions>
             </plugin>
             <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-sources</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <mkdir dir="${project.build.directory}/mvn-repo/org/grails/plugins"/>
+                                <move todir="target/mvn-repo/org/grails/plugins">
+                                <fileset dir="target/mvn-repo/envers">
+                                </fileset>
+                                </move>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>com.github.github</groupId>
                 <artifactId>site-maven-plugin</artifactId>
                 <version>0.12</version>
                 <configuration>
                     <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
                     <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
-                    <outputDirectory>${project.build.directory}/mvn-repo/org/grails/plugins</outputDirectory> <!-- matches distribution management repository url above -->
+                    <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
                     <branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
-                    <includes><include>**/*</include></includes>
+                    <includes>
+                        <include>**/*</include>
+                    </includes>
                     <repositoryName>grails-envers-plugin</repositoryName>      <!-- github repo name -->
                     <repositoryOwner>ihcnet</repositoryOwner>    <!-- github username  -->
                 </configuration>
@@ -206,7 +229,8 @@
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>2.8.1</version>
                 <configuration>
-                    <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
+                    <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo
+                    </altDeploymentRepository>
                 </configuration>
             </plugin>
         </plugins>
