@@ -6,7 +6,6 @@
 
     <groupId>org.grails.plugins</groupId>
     <artifactId>envers</artifactId>
-    <packaging>grails-plugin</packaging>
     <version>4.3.6.Final-SNAPSHOT</version>
 
     <name>envers</name>
