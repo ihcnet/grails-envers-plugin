@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <groupId>envers</groupId>
+  <groupId>org.grails.plugin</groupId>
   <artifactId>envers</artifactId>
   <versioning>
     <versions>
       <version>4.3.6.Final-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20160320224633</lastUpdated>
+    <lastUpdated>20160328051732</lastUpdated>
   </versioning>
 </metadata>
