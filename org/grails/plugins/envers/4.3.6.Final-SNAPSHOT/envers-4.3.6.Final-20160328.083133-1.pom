@@ -4,8 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.grails.plugins</groupId>
+    <groupId>envers</groupId>
     <artifactId>envers</artifactId>
+    <packaging>grails-plugin</packaging>
     <version>4.3.6.Final-SNAPSHOT</version>
 
     <name>envers</name>
