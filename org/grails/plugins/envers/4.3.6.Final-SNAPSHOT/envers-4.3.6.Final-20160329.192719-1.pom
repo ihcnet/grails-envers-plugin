@@ -7,7 +7,7 @@
     <groupId>org.grails.plugins</groupId>
     <artifactId>envers</artifactId>
     <version>4.3.6.Final-SNAPSHOT</version>
-
+    <packaging>grails-plugin</packaging>
     <name>envers</name>
     <description>envers</description>
 
@@ -178,11 +178,11 @@
                         </goals>
                         <configuration>
                             <tasks>
-                                <mkdir dir="${project.build.directory}/mvn-repo/org/grails/plugins"/>
-                                <move todir="target/mvn-repo/org/grails/plugins">
+                                <!--<mkdir dir="${project.build.directory}/mvn-repo/org/grails/plugins"/>-->
+                                <!--<move todir="target/mvn-repo/org/grails/plugins">
                                 <fileset dir="target/mvn-repo/envers">
                                 </fileset>
-                                </move>
+                                </move>-->
                             </tasks>
                         </configuration>
                     </execution>
@@ -196,7 +196,7 @@
                     <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
                     <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
                     <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
-                    <branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
+                    <branch>refs/heads/mvn-repo-gradle</branch>                       <!-- remote branch name -->
                     <includes>
                         <include>**/*</include>
                     </includes>
