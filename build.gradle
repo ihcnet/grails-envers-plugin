@@ -1,7 +1,7 @@
 apply plugin: 'grails'
 apply plugin: 'maven-publish'
 
-group 'org.grails.plugins'
+group 'com.github.ihcnet.envers'
 version '4.3.6.Final-SNAPSHOT'
 
 buildscript {
