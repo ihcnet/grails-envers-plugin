@@ -168,27 +168,6 @@
                 <extensions>true</extensions>
             </plugin>
             <plugin>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>generate-sources</id>
-                        <phase>deploy</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <tasks>
-                                <!--<mkdir dir="${project.build.directory}/mvn-repo/org/grails/plugins"/>-->
-                                <!--<move todir="target/mvn-repo/org/grails/plugins">
-                                <fileset dir="target/mvn-repo/envers">
-                                </fileset>
-                                </move>-->
-                            </tasks>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>com.github.github</groupId>
                 <artifactId>site-maven-plugin</artifactId>
                 <version>0.12</version>
